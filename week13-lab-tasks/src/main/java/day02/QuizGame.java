@@ -31,7 +31,7 @@ public class QuizGame {
             return solutions.toCharArray()[number - 1]
                     == player.getAnswers().get(number - 1);
         }
-        return false;
+        throw new IllegalArgumentException("Player with id " + id + " is not exist!");
     }
 
     public String getWinnerId() {
