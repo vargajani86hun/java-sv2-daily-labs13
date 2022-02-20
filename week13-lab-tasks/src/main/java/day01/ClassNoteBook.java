@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class ClassNoteBook {
-    private Map<Student, List<Integer>> classNotes = new TreeMap<>(Comparator.comparing(Student::getId));
+    private Map<Student, List<Integer>> classNotes = new TreeMap<>();
 
     public void addStudent(Student student) {
         classNotes.put(student, new ArrayList<>());
@@ -18,5 +18,9 @@ public class ClassNoteBook {
             }
         }
         throw new IllegalArgumentException("Student with ID: " + id + " can not found!");
+    }
+
+    public Map<Student, List<Integer>> getClassNotes() {
+        return new TreeMap<>(classNotes);
     }
 }
